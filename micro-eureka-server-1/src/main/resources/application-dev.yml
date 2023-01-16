@@ -1,0 +1,49 @@
+server:
+  port: 7100
+#  servlet:
+#    context-path: / #变更2
+##  context-path: /
+#  tomcat:
+#    max-threads: 200
+#    uri-encoding: UTF-8
+#    basedir: D:/data/tomcat8-application/${spring.application.name}/
+#    max-http-post-size: 10485760
+#    accesslog:
+#      enabled: true
+#      pattern: common
+#      directory: logs
+#变更1
+spring:
+  security:
+    user:
+      name: admin
+      password: admin123
+      
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+    response-cache-update-interval-ms
+    response-cache-update-interval-ms
+#    status-page-url-path: ${server.servlet.context-path}/info
+#    health-check-url: ${server.servlet.context-path}/health
+#  server:
+#    #eureka server刷新readCacheMap的时间,把readWriteCacheMap的缓存更新到readCacheMap上周期
+#    response-cache-update-interval-ms: 10000 #default 30*1000
+#    response-cache-auto-expiration-in-seconds: 60 #default 180s
+#    eviction-interval-timer-in-ms: 20000 #default 60*1000 #启用主动失效，并且每次主动失效检测间隔为20s
+  client:
+    # 是否要注册到其他Eureka Server实例
+    register-with-eureka: false 
+    # 是否要从其他Eureka Server实例获取数据    
+    fetch-registry: false
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://localhost:7100/eureka/
+#${spring.security.user.name}:${spring.security.user.password}@
+logging:
+   appender: console
+   path: /data/logs/
+   pattern:
+    level: info

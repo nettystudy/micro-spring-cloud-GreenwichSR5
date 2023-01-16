@@ -1,0 +1,22 @@
+#server:
+#  servlet:
+#    context-path: / #变更1
+#  tomcat:
+#    uri-encoding: UTF-8
+#    basedir: D:/data/tomcat8-application/${spring.application.name}/
+#    max-http-post-size: 10485760
+#    accesslog:
+#      enabled: true
+#      pattern: common
+#      directory: logs
+#spring.main.allow-bean-definition-overriding=true
+spring:
+#  security: #变更1
+#    user:
+#      name: admin
+#      password: admin123
+  application:
+    name: micro-eureka-server-1
+    mainclass: com.zhht.BootStrapApplication
+  profiles: 
+    active: dev
